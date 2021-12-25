@@ -15,7 +15,7 @@ public class Account {
     @Column
     private BigDecimal balance;
     @ManyToOne(fetch = FetchType.EAGER)
-    private CreditCard creditCard;
+    private Card card;
 
 
 }

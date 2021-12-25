@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class CreditCard {
+public class Card {
     @Id
     private Long cardNumber;
     @ManyToMany(mappedBy = "cards", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)

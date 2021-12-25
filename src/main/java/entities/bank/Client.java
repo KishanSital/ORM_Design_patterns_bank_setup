@@ -20,5 +20,5 @@ public class Client {
             joinColumns = {@JoinColumn(name = "client_idCard")},
             inverseJoinColumns = {@JoinColumn(name = "card_cardNumber")}
     )
-    private List<CreditCard> creditCards;
+    private List<Card> cards;
 }
