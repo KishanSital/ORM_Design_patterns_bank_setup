@@ -10,7 +10,7 @@ public class JPAConfiguration {
     private EntityManager entityManager;
 
     public JPAConfiguration(String persistenceUnitName) {
-        this.persistenceUnitName = persistenceUnitName;
+        this.persistenceUnitName = persistenceUnitName.trim();
         this.factory = Persistence.createEntityManagerFactory(persistenceUnitName);
         this.entityManager = factory.createEntityManager();
     }

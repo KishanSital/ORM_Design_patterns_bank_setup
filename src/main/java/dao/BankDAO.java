@@ -1,9 +1,10 @@
 package dao;
 
-import entities.bank.Client;
+import entities.bank.BankClient;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class BankDAO {
@@ -13,13 +14,14 @@ public class BankDAO {
         this.entityManager = entityManager;
     }
 
-    public List<Client> retrieveClientList() {
+    @Transactional
+    public List<BankClient> retrieveClientList() {
         entityManager.getTransaction().begin();
 
-        String jpql = "select c from Client c";
-        TypedQuery<Client> query = entityManager.createQuery(jpql, Client.class);
-        List<Client> clientList = query.getResultList();
+        String jpql = "select c from BankClient c";
+        TypedQuery<BankClient> query = entityManager.createQuery(jpql, BankClient.class);
+        List<BankClient> bankClientList = query.getResultList();
         entityManager.getTransaction().commit();
-        return clientList;
+        return bankClientList;
     }
 }

@@ -2,12 +2,13 @@ package entities.bank;
 
 import javax.persistence.*;
 
+@Table(name = "bank_currency")
 @Entity
-public class Currency {
+public class BankCurrency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(name = "currency_code")
     private String currencyCode;
 
 }
