@@ -15,5 +15,7 @@ public class Card {
     )
     @JoinColumn(name = "Card_cardNumber")
     private List<Account> accounts;
+    @Column
+    private Long pin;
 
 }
